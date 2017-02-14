@@ -1,0 +1,21 @@
+﻿<ContentDialog
+    x:Class="ManateeShoppingCart.UWP.UWPContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ManateeShoppingCart.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title=""
+    PrimaryButtonText="OK"
+    SecondaryButtonText="CANCEL"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    IsPrimaryButtonEnabled="False">
+    <Grid>
+        <StackPanel>
+            <TextBlock Name="txtDescription" FontSize="15" HorizontalAlignment="Left" Margin="5,5,5,25" Text="Description" TextWrapping="Wrap" />
+            <TextBox Name="txtEntry" FontSize="16" HorizontalContentAlignment="Left" PlaceholderText="Entry new name" TextChanged="txtEntry_TextChanged" KeyUp="txtEntry_KeyUp"/>
+        </StackPanel>
+    </Grid>
+</ContentDialog>
