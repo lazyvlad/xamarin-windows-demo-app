@@ -1,0 +1,17 @@
+﻿<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:ManateeShoppingCard;assembly=ManateeShoppingCard"
+                  x:Class="ManateeShoppingCard.MainPage"
+			            MasterBehavior="Popover"
+                  Title="MainPage">
+  <MasterDetailPage.Master>
+    <local:MainActions x:Name="mainActions" />
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage BarBackgroundColor="#1ab78d" BarTextColor="White">
+      <x:Arguments>
+        <local:AllListsPage />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

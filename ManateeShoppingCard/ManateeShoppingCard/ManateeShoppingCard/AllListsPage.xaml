@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ManateeShoppingCard.AllListsPage"
+             Title="ALL LISTS">
+  <ContentPage.Content>
+    <Grid RowSpacing="0" ColumnSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <ListView Grid.Row="0" x:Name="listViewAllLists" ItemTapped="listViewAllListsItemTapped" ItemDisappearing="listViewItemDisappearing" ItemSelected="listViewAllListsItemSelected">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <ContentView Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Padding="5, 5, 5, 5">
+                  <Image x:Name="imgScanEdit" Source="{Binding ImageUrl}" />
+                </ContentView>
+                <ContentView Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Padding="5, 5, 5, 5">
+                  <Label Text = "{Binding Name}" Font="15" />
+                </ContentView>
+                <ContentView Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Padding="3, 3, 3, 3">
+                  <Image x:Name="imgEdit" Source="Assets/Pencil36x36.png">
+                    <Image.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="imgEditTapped" CommandParameter="{Binding ID}" />
+                    </Image.GestureRecognizers>
+                  </Image>
+                </ContentView>
+                <ContentView Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" Padding="3, 3, 3, 3">
+                  <Image x:Name="imgDelete" Source="Assets/trash36x36.png">
+                    <Image.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="imgDeleteTapped" CommandParameter="{Binding ID}" />
+                    </Image.GestureRecognizers>
+                  </Image>
+                </ContentView>
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+      <Entry Grid.Row="1" x:Name="entryNewList" Placeholder="Add new list" FontSize="19" Completed="entryNewListCompleted" />
+
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>
