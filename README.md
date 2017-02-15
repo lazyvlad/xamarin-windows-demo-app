@@ -88,7 +88,7 @@ After the registration is complete visit this link in order to generate a free t
 
 **Step 3** - In ManateeShoppingCart.UWP(Universal Windows Platform) project open the BarcodeHelper.cs and enter your license key in row 228
 
-      int registerResult = Scanner.MWBregisterSDK(&quot;key&quot;);
+      int registerResult = Scanner.MWBregisterSDK("key");
 
 Set ManateeShoppingCart.UWP(Universal Windows Platform) project as startup project, build and then rebuild ManateeShoppingCart(Portable) project and then build and rebuild ManateeShoppingCart.UWP(Universal Windows Platform).
 
